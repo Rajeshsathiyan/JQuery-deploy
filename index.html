@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px; /* Set a max-width for better readability */
+      margin: auto; /* Center the form */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%; /* Make the button full width */
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registrationForm">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone no">Phone No:</label>
+    <input type="text" id="phoneno" name="phoneno" required>
+
+    <button type="button" id="submitBtn">Submit</button>
+  </form>
+
+  <script>
+    $(document).ready(function () {
+      // Function to handle form submission
+      function submitForm() {
+        // Get input values
+        var fullName = $('#fullName').val();
+        var email = $('#email').val();
+        var phoneno = $('#phoneno').val();
+
+        // Display alert with input values
+        alert('Registration successful!\n\nFull Name: ' + fullName + '\nEmail: ' + email + '\nPhoneno: ' + phoneno);
+
+        // Clear form values
+        $('#fullName').val('');
+        $('#email').val('');
+        $('#phoneno').val('');
+      }
+
+      // Attach click event to the submit button
+      $('#submitBtn').click(function () {
+        submitForm();
+      });
+    });
+  </script>
+
+</body>
+</html>
